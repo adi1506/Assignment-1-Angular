@@ -1,0 +1,100 @@
+<form #frm = "ngForm" (ngSubmit) = "updateInfo(frm)">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="form-group">
+                <label>Emp ID : </label>
+                <input type="text" class="form-control" name="empID" value="" [(ngModel)] = "employee.empID">
+            </div>
+            <div class="form-group">
+                <label>Emp Name : </label>
+                <input type="text" class="form-control" name="empName" value="" [(ngModel)] = "employee.empName">
+            </div>
+            <div class="form-group">
+                <label>Emp Mail : </label>
+                <input type="text" class="form-control" name="empMail" value="" [(ngModel)] = "employee.empMail">
+            </div>
+            <div class="form-group">
+                <label>Emp Country : </label>
+                <input type="text" class="form-control" name="empCountry" value="" [(ngModel)] = "employee.empCountry">
+            </div>
+            <div class="form-group">
+                <label class="checkbox-inline">
+                    <input [checked]="true" type="checkbox" class="form-control" name="isFresher" value="" [(ngModel)] = "employee.isFresher" >
+                    Fresher?
+                </label>
+                
+            </div>
+            <button type="submit" name="button" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
+<table border="1" align="center">
+    <tr>
+        <td>S No</td>
+        <td>Emp ID</td>
+        <td>Emp Name</td>
+        <td>Emp Email</td>
+        <td>Emp Country</td>
+        <td>Fresher?</td>
+    </tr>
+    <tr *ngFor="let employee of employees; let i = index;">
+        <td>{{i+1}}</td>
+        <td>{{ employee.empID }}</td>
+        <td>{{ employee.empName }}</td>
+        <td>{{ employee.empMail }}</td>
+        <td>{{ employee.empCountry }}</td>
+        <td>{{ employee.isFresher }}</td>
+
+    </tr>
+</table>
+
+<!-- <div class="center"> -->
+    <!-- frm is the template variable to access all the values from the form -->
+    <!-- <form #frm = "ngForm" (ngSubmit) = "updateInfo(frm)">
+        <div class="">
+            <label>Emp ID : </label>
+            <input type="text" name="empID" value="" [(ngModel)] = "employee.empID">
+        </div>
+        <div class="">
+            <label>Emp Name : </label>
+            <input type="text" name="empName" value="" [(ngModel)] = "employee.empName">
+        </div>
+        <div class="">
+            <label>Email ID : </label>
+            <input type="text" name="empMail" value="" [(ngModel)] = "employee.empMail">
+        </div>
+        <div class="">
+            <label>Country : </label>
+            <input type="text" name="empCountry" value="" [(ngModel)] = "employee.empCountry">
+        </div>
+        <button type="submit" name="button">Submit</button>
+    </form> -->
+
+    <!-- <button type="button" name="button" (click)="getInfoFromService1()">Employee 1</button>
+    <ul class="list-group">
+        <li *ngFor = "let info of infoReceived1" class="list-group-info">{{info}}</li>
+    </ul>
+
+    <button type="button" name="button" (click)="getInfoFromService2()">Employee 2</button>
+    <ul class="list-group">
+        <li *ngFor = "let info of infoReceived2" class="list-group-info">{{info}}</li>
+    </ul>
+
+    <button type="button" name="button" (click)="getInfoFromService3()">Employee 3</button>
+    <ul class="list-group">
+        <li *ngFor = "let info of infoReceived3" class="list-group-info">{{info}}</li>
+    </ul> -->
+
+    <!-- <button type="button" name="button" (click) = "getInfoFromService()">View Info</button> -->
+
+<!-- 
+    <div *ngFor="let employee of employees; let i = index;">
+        <h3 class="num">Employee number {{i+1}}</h3>
+		<div class="id">Emp ID : {{ employee.empID }}</div>
+		<div class="name" >Emp Name : {{ employee.empName }}</div>
+        <div class="mail" >Emp Mail :{{ employee.empMail }}</div>
+        <div class="country" >Emp Country : {{ employee.empCountry }}</div>
+	</div> -->
+<!-- </div> -->
+
